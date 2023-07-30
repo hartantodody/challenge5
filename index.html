@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-family: Arial, Helvetica, sans-serif;
+        box-sizing: border-box;
+      }
+      .container {
+        width: 340px;
+        margin: auto;
+        padding: 24px 0;
+      }
+
+      h1 {
+        margin-bottom: 4px;
+        text-align: center;
+        font-size: 22px;
+      }
+
+      .input-container {
+        margin: 20px 0;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .input-container input {
+        padding: 6px 10px;
+        width: 260px;
+      }
+
+      .input-container button {
+        padding: 6px 12px;
+      }
+
+      .todo-body li {
+        display: flex;
+        justify-content: space-between;
+        padding: 6px;
+      }
+
+      .todo-body li:nth-child(odd) {
+        background: #eee;
+      }
+
+      .todo-body li:nth-child(even) {
+        background: #ddd;
+      }
+
+      .todo-body input {
+        cursor: pointer;
+      }
+      
+      .todo-body label.done {
+        text-decoration: line-through;
+      }
+      
+      .todo-body .todo-delete {
+        background: red;
+        color: #fff;
+        border: none;
+        padding: 1px 4px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Todo App</h1>
+
+      <div class="input-container">
+        <input type="text" />
+        <button class="btn-simpan">Simpan</button>
+      </div>
+
+      <hr />
+
+      <ul class="todo-body">
+        <li>
+          <div class="todo-list">
+            <input id="todo" type="checkbox" />
+            <label for="todo">Ngoding</label>
+          </div>
+          <button class="todo-delete" >x</button>
+        </li>
+        <li>
+          <div class="todo-list">
+            <input id="todo2" type="checkbox" checked />
+            <label class="done" for="todo2">Gym</label>
+          </div>
+          <button class="todo-delete" >x</button>
+        </li>
+      </ul>
+    </div>
+
+    <script src="/index.js"></script>
+  </body>
+</html>
