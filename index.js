@@ -45,25 +45,32 @@ saveButton.addEventListener('click', function(){
 
 
 //DELETE FUNCTION
-const delButtons = document.querySelectorAll('.todo-delete')
-const delContainer = (e) => {
-    e.target.closest.remove('.todo-list')
-}
+document.addEventListener('click', function(e){
+    const todoDelete = e.target.classList.contains('todo-delete')
+    const delButtons = document.querySelectorAll('.todo-delete')
 
-delButtons.forEach(delButton => {
-    delButton.addEventListener('click', function(){
-      delContainer
+    delButtons.forEach(delButton => {
+        if(todoDelete === true){
+            delButton.parentElement.remove()
+        }
+    });
 
-    })
 })
 
-//CHECK-DONE FUNCTION
-// const checkbox = document.querySelectorAll('input[type='checkbox']')
 
-// checkbox.addEventListener('change', function(){
-//   if (currentTarget.checked) {
-//     alert('checked');
-//   } else {
-//     alert('not checked');
-//   }
-// })
+//CHECK-DONE FUNCTION
+const checkBoxes = document.querySelectorAll('input[type="checkbox"]')
+const labelText = document.getElementsByName('label')
+
+const toggleCheck = () => {
+    labelText.classList.toggle('done')
+}
+
+checkBoxes.forEach(checkBox => {
+    checkBox.addEventListener('change', function () {
+        if (checkBox.classList.contains('done')) {
+          toggleCheck();
+        }
+      });  
+});
+
